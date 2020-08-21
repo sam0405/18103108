@@ -1,4 +1,4 @@
-package q1;
+//package q1;
 import java.util.Scanner;
 public class substring {
 	public static boolean zeros(int arr[])
