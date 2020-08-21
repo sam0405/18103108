@@ -1,5 +1,5 @@
 
-package q2;
+//package q2;
 import java.util.*;
 public class replace {
 	public static String replacing(String word,String text) {
