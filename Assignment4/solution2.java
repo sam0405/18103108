@@ -1,4 +1,4 @@
-package ques1;
+//package ques1;
 
 public class solution2 {
 	public static void main(String[] args) {
