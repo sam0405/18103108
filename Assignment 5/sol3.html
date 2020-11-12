@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bracket_Validation3</title>
+</head>
+<body>
+
+    <form>
+        <label>Enter bracket string: </label><br>
+        <input type="text" id="string" name="string"><br>
+        <input type="submit" value="Submit" id="myButton">
+    </form>
+
+
+</body>
+
+<script>
+
+
+
+    document.getElementById("myButton").addEventListener("click", function()
+    {
+        var get_string = document.getElementById("string").value;
+        var arr = new Array();
+        var ans=true;
+        var last;
+        for(var i=0;i<get_string.length;i++)
+        {
+            if(get_string.charAt(i)=="(")
+            {
+                arr.push(1);
+            }
+            else if(get_string.charAt(i)=="[")
+            {
+                arr.push(2);
+            }
+            else if(get_string.charAt(i)=="{")
+            {
+                arr.push(3);
+            }
+            else if(get_string.charAt(i)==")")
+            {
+                if(arr.length==0)
+                {
+                    ans=false;
+                    break;
+                }
+                last = arr.pop();
+                if(last!=1)
+                {
+                    ans=false;
+                    break;
+                }
+            }
+            else if(get_string.charAt(i)=="]")
+            {
+                if(arr.length==0)
+                {
+                    ans=false;
+                    break;
+                }
+                last = arr.pop();
+                if(last!=2)
+                {
+                    ans=false;
+                    break;
+                }
+            }
+            else if(get_string.charAt(i)=="}")
+            {
+                if(arr.length==0)
+                {
+                    ans=false;
+                    break;
+                }
+                last = arr.pop();
+                if(last!=3)
+                {
+                    ans=false;
+                    break;
+                }
+            }
+        }
+        if(arr.length!=0)
+        {
+            ans=false;
+        }
+        if(ans==true)
+        {
+            alert(get_string + " is Valid");
+        }
+        else
+        {
+            alert(get_string + " is Invalid");
+        }
+
+    }, false);
+</script>
+</html>
